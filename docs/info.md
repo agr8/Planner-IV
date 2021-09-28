@@ -5,7 +5,9 @@ En este apartado se pretende justificar la realización de cada objetivo, ademá
 ## **Objetivo 0 - Configuración del entorno de desarrollo** :hammer_and_wrench: :heavy_check_mark:
 ---
 * **Creación de par de claves y subida de clave pública a GitHub** :key:
-  Para ello, recurrí a la documentación oficial de GitHub. Únicamente seguí los pasos que allí se indican. A continuación, dejo los enlaces para cada una de las partes.
+ 
+   Para ello, recurrí a la documentación oficial de GitHub. Únicamente seguí los pasos que allí se indican. A continuación, dejo los enlaces para cada una de las partes.
+  
   **Generar las claves:**
   [GitHub Docs :paperclips:](https://docs.github.com/es/github/authenticating-to-github/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 
@@ -40,6 +42,7 @@ En este apartado se pretende justificar la realización de cada objetivo, ademá
 
    
 * **Creación de rama específica para el objetivo 0**
+
   Uso del [plugin de git proporcionado :paperclips:](https://github.com/JJ/IV/blob/master/scripts/git-iv) para la asignatura. 
   
   
