@@ -1,6 +1,6 @@
 # Desarrollo de los objetivos
 
-En este apartado se pretende justificar la realización de cada objetivo, además de reflejar los recursos que me han resultado útiles para poder llevar acabo este proyecto.
+En este apartado se pretende justificar la realización de cada objetivo, además de reflejar los recursos que me han resultado útiles para poder llevar a cabo este proyecto.
 
 ## **Objetivo 0 - Configuración del entorno de desarrollo** :hammer_and_wrench: :heavy_check_mark:
 ---
