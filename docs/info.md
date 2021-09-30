@@ -86,9 +86,15 @@ En este apartado se pretende justificar la realización de cada objetivo, ademá
   * **_Pedro_**, de 34 años. Estaría interesado en todas las **_actividades culturales y de ocio_** que se organizan  a lo largo del año para llevar a sus hijos pequeños. Por otro lado, la utilizaría también para **_encontrar restaurantes_** a los que acudir con sus amigos.
   * **_Carlos_**, 45 años. Su interés en la aplicación es muy distinto al de las anteriores personas. En este caso, Carlos utilizaría la aplicación para **_dar a conocer su negocio y atraer clientela_**. A el le interesa conocer qué opinan sus clientes y qué prefieren de otros lugares. Por tanto, **_utilizaría la aplicación como herramienta para conseguir posteriormente un beneficio económico_**.
 
-
+* **Tipos de clientes**
+  
+  Teniendo en cuenta los perfiles descritos anteriormente, se pueden diferenciar tres tipos principales de clientes:
+    - **Usuario** que quiere recibir información sobre planes que más encajen con sus preferencias, gustos, presupuesto, horario...
+    - **Comerciante o asociación de comerciantes de un barrio.** 
+      Este tipo de clientes engloba a todos aquellos comerciantes que utilizarán la aplicación como un medio de publicidad. Pagarán para que su negocio pueda aparecer y ser recomendado a los usuarios.
+    - **Instituciones, asociaciones o el Ayuntamiento de Granada.**
+      Se trata de organismos interesados en los datos generados por la aplicación. De esta forma, pueden saber qué tipo de actividades son las que más éxito tienen en la ciudad, planificar otras actividades para el futuro en función de lo que los usuarios consuman, etc. 
 
   
-* **Historias de usuario y Milestones**
   
 
