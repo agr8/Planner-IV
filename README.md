@@ -10,6 +10,7 @@ El problema que va a tratar de solucionarse con esta aplicación es un problema 
 Con esta aplicación se podrá conocer la zona a la que el usuario quiere ir, el tipo de plan que quiere hacer (comida/cena en bares/restaurantes, meriendas, actividades culturales, ocio, turismo...), el presupuesto del que dispone... Todas estas preferencias se procesarán y se ofrecerá la opción que mejor se adecúe al usuario.
 
 **Cómo abordar el problema**
+
 Inicialmente, se abordará el problema centrándose en el problema de la mochila. Se establecerá un precio (que corresponderá con el presupuesto del usuario) y un tipo de actividad, la aplicación devolverá un determinado número de actividades que puedan realizarse con esos requisitos. Por ejemplo, si se tiene un presupuesto de 5 euros y como tipo de actividad se elige 'Tapas', la aplicación eligirá, entre varios bares, los que mejor que ajusten al presupuesto y sirvan tapas.
 
 ## **Planificación** :bookmark_tabs:
