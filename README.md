@@ -11,7 +11,7 @@ Con esta aplicación se podrá conocer la zona a la que el usuario quiere ir, el
 
 **Cómo abordar el problema**
 
-Inicialmente, se abordará el problema centrándose en el problema de la mochila. Se establecerá un precio (que corresponderá con el presupuesto del usuario) y un tipo de actividad, la aplicación devolverá un determinado número de actividades que puedan realizarse con esos requisitos. Por ejemplo, si se tiene un presupuesto de 5 euros y como tipo de actividad se elige 'Tapas', la aplicación eligirá, entre varios bares, los que mejor que ajusten al presupuesto y sirvan tapas.
+Inicialmente, se abordará el problema centrándose en el problema de la mochila. Se establecerá un precio (que corresponderá con el presupuesto del usuario) y un tipo de actividad, la aplicación devolverá un determinado número de actividades que puedan realizarse con esos requisitos. Por ejemplo, si se tiene un presupuesto de 5 euros y como tipo de actividad se elige 'Tapas', la aplicación elegirá, entre varios bares, los que mejor que ajusten al presupuesto y sirvan tapas.
 
 ## **Planificación** :bookmark_tabs:
 Para llevar a cabo la planificación de este proyecto, se ha organizado en [Historias de Usuario:paperclips:](https://github.com/agr8/Proyecto-IV/issues) (Issues) y [Milestones:paperclips:](https://github.com/agr8/Proyecto-IV/milestones). 
