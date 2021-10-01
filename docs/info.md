@@ -1,8 +1,8 @@
-#Desarrollo de los objetivos
+# Desarrollo de los objetivos
 
 En este apartado se pretende justificar la realización de cada objetivo, además de reflejar los recursos que me han resultado útiles para poder llevar acabo este proyecto.
 
-##**Objetivo 0 - Configuración del entorno de desarrollo** :hammer_and_wrench: :heavy_check_mark:
+## **Objetivo 0 - Configuración del entorno de desarrollo** :hammer_and_wrench: :heavy_check_mark:
 ---
 * **Creación de par de claves y subida de clave pública a GitHub** :key:
   Para ello, recurrí a la documentación oficial de GitHub. Únicamente seguí los pasos que allí se indican. A continuación, dejo los enlaces para cada una de las partes.
@@ -70,7 +70,7 @@ En este apartado se pretende justificar la realización de cada objetivo, ademá
 * **Licencias**
   [GitHub Docs :paperclips:](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)
 
-##Objetivo 1 - Estructura general y planificación del proyecto  :bookmark_tabs:
+## Objetivo 1 - Estructura general y planificación del proyecto  :bookmark_tabs:
 
 ---
 * **Metodología de Personas** :busts_in_silhouette:	
