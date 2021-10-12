@@ -1,5 +1,5 @@
-import { ActivityConstants as Const } from "./Globals";
-import { ActivityType } from "./ActivityType";
+import { ActivityConstants as Const } from "./Globals"
+import { ActivityType } from "./ActivityType"
 
 export default class Activity {
     private _title: string
