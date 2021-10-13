@@ -1,6 +1,7 @@
 import { ActivityConstants as Const } from "./Globals"
 import { ActivityType } from "./ActivityType"
 
+//Class created to represent information about the activities offered in the app
 export default class Activity {
     private _title: string
     private _description: string

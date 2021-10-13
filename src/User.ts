@@ -1,6 +1,7 @@
 import { UserConstants as Const } from "./Globals"
 import { UserType } from "./UserType"
 
+//Class created to represent information about the users of the app
 export default class User {
     private _name: string
     private _surname: string

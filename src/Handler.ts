@@ -1,6 +1,7 @@
 import User from "./User";
 import Activity from "./Activity"
 
+//Class created manage all users and activities of the system
 export default class Handler {
     private _users: Map<string,User>
     private _activities: Map<string,Activity>

@@ -1,3 +1,5 @@
+//File created to store all constants values along the app
+
 export abstract class UserConstants {
     static readonly NAME_MIN_LENGTH: number = 1
     static readonly NAME_MAX_LENGTH: number = 24
