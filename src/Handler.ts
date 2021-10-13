@@ -12,7 +12,7 @@ export default class Handler {
     }
 
     add_user(ID: string, usuario: User) {
-        if(this._users.has(ID)) {
+        if (this._users.has(ID)) {
             return false
         } else {
             this._users.set(ID,usuario)
@@ -20,14 +20,24 @@ export default class Handler {
         }
     }
     get_user(ID: string) {
-        if (this._users.has(ID))
+        if (this._users.has(ID)) {
             return this._users.get(ID)
-        else
+        } else {
             return null
+        }
     }
-    //Both add methods check if an User/Activity with the given key exists, as it would be overwritten
+    delete_user(ID: string) {
+        if (this._users.has(ID)) {
+            this._users.delete(ID)
+            return true
+        } else {
+            return false
+        }
+    } 
+    
+    //Both add methods check if an User/Activity with the given key exists, as it would be overwritten. Return if operation was performed successfully
     //Both get methods return null if an User/Activity with a given key doesn't exist
-
+    //Both delete methods return if operation was performed successfully
 
     add_activity(ID: string, actividad: Activity) {
         if(this._activities.has(ID)) {
@@ -43,4 +53,12 @@ export default class Handler {
         else
             return null
     }
+    delete_activity(ID: string) {
+        if (this._activities.has(ID)) {
+            this._activities.delete(ID)
+            return true
+        } else {
+            return false
+        }
+    } 
 }
