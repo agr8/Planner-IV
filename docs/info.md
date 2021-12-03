@@ -74,7 +74,7 @@ En este apartado se pretende justificar la realización de cada objetivo, ademá
 * **Licencias**
   [GitHub Docs :paperclips:](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)
 
-## Objetivo 1 - Estructura general y planificación del proyecto  :bookmark_tabs:
+## Objetivo 1 - Estructura general y planificación del proyecto  :bookmark_tabs::heavy_check_mark:
 
 ---
 * **Metodología de Personas** :busts_in_silhouette:	
@@ -98,7 +98,14 @@ En este apartado se pretende justificar la realización de cada objetivo, ademá
       Este tipo de clientes engloba a todos aquellos comerciantes que utilizarán la aplicación como un medio de publicidad. Pagarán para que su negocio pueda aparecer y ser recomendado a los usuarios.
     - **Instituciones, asociaciones o el Ayuntamiento de Granada.**
       Se trata de organismos interesados en los datos generados por la aplicación. De esta forma, pueden saber qué tipo de actividades son las que más éxito tienen en la ciudad, planificar otras actividades para el futuro en función de lo que los usuarios consuman, etc. 
+## Objetivo 2 - Comienzo de la implementación del proyecto :computer:
 
+---
   
+* **Lenguaje elegido**  
+He elegido el lenguaje TypeScript ya que conocía previamente  algunos de sus puntos fuertes:
+  - Es un lenguaje de tipado fuerte y estático
+  - Realiza comprobaciones en tiempo de compilación.
   
+  Estos puntos facilitan mucho el desarrollo ya que detecta los errores antes que otros lenguajes de programación (TypeScript es un superset de JavaScript, por lo que supone un gran cambio y una mejora enorme respecto a JavaScript) Por otro lado, no había realizado muchos proyectos ni prácticas con TypeScript, así que lo he considerado como una buena oportunidad para aprender más. Además, mi compañero @modejota ( que realizó el Objetivo 2 ) se encontraba en la misma situación que yo y a ambos nos pareció buena idea llevar a cabo la implementación en TypeScript.
 
