@@ -20,6 +20,22 @@ El proceso que se ha seguido para crear las Historias de Usuario se basa en la m
 
 Encontrará más información sobre la metodología de personas, user journeys y tipos de clientes de la aplicación en la [Documentación](docs/info.md) :paperclips:.
 
+## **Automatización** :wrench::package:
+Se dispone de la siguiente orden para comprobar la sintaxis:
+```
+npm run check
+```
+Para la compilación,está disponible el siguiente comando:
+```
+npm run build
+```
+Cuando los tests estén implementados (aún no lo están, por lo que la orden emitirá un mensaje de salida avisando de ello) podrá ejecutarlos con la orden:
+```
+npm run test
+```
+
+En cuanto a la justificación de las decisiones que se han tomado sobre el lenguaje y el gestor de dependencias y de tareas elegidos, puede encontrar más información en la [documentación adicional](docs/info.md) :paperclips:
+
 
 
 
