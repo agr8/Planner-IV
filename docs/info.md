@@ -109,6 +109,9 @@ He elegido el lenguaje TypeScript ya que conocía previamente  algunos de sus pu
   
   Estos puntos facilitan mucho el desarrollo ya que detecta los errores antes que otros lenguajes de programación (TypeScript es un superset de JavaScript, por lo que supone un gran cambio y una mejora enorme respecto a JavaScript) Por otro lado, no había realizado muchos proyectos ni prácticas con TypeScript, así que lo he considerado como una buena oportunidad para aprender más. Además, mi compañero @modejota ( que realizó el Objetivo 2 ) se encontraba en la misma situación que yo y a ambos nos pareció buena idea llevar a cabo la implementación en TypeScript.
 
+## Objetivo 3 - Automatización de operaciones :wrench: :package:
+
+---
 * **Gestor de dependencias y gestor de tareas**
    Antes de elegir un gestor he investigado distintas opciones para finalmente, decantarme por npm. 
    Al elegir como lenguaje TypeScript, las herramientas que más aparecían para este lenguaje son npm y yarn. A continuación dejo las principales características que considero relevantes de cada una de ellas:
