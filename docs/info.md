@@ -74,7 +74,7 @@ En este apartado se pretende justificar la realización de cada objetivo, ademá
 * **Licencias**
   [GitHub Docs :paperclips:](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)
 
-## Objetivo 1 - Estructura general y planificación del proyecto  :bookmark_tabs:
+## Objetivo 1 - Estructura general y planificación del proyecto  :bookmark_tabs::heavy_check_mark:
 
 ---
 * **Metodología de Personas** :busts_in_silhouette:	
@@ -98,7 +98,28 @@ En este apartado se pretende justificar la realización de cada objetivo, ademá
       Este tipo de clientes engloba a todos aquellos comerciantes que utilizarán la aplicación como un medio de publicidad. Pagarán para que su negocio pueda aparecer y ser recomendado a los usuarios.
     - **Instituciones, asociaciones o el Ayuntamiento de Granada.**
       Se trata de organismos interesados en los datos generados por la aplicación. De esta forma, pueden saber qué tipo de actividades son las que más éxito tienen en la ciudad, planificar otras actividades para el futuro en función de lo que los usuarios consuman, etc. 
+## Objetivo 2 - Comienzo de la implementación del proyecto :computer:
 
+---
   
+* **Lenguaje elegido**  
+He elegido el lenguaje TypeScript ya que conocía previamente  algunos de sus puntos fuertes:
+  - Es un lenguaje de tipado fuerte y estático
+  - Realiza comprobaciones en tiempo de compilación.
   
+  Estos puntos facilitan mucho el desarrollo ya que detecta los errores antes que otros lenguajes de programación (TypeScript es un superset de JavaScript, por lo que supone un gran cambio y una mejora enorme respecto a JavaScript) Por otro lado, no había realizado muchos proyectos ni prácticas con TypeScript, así que lo he considerado como una buena oportunidad para aprender más. Además, mi compañero @modejota ( que realizó el Objetivo 2 ) se encontraba en la misma situación que yo y a ambos nos pareció buena idea llevar a cabo la implementación en TypeScript.
+
+## Objetivo 3 - Automatización de operaciones :wrench: :package:
+
+---
+* **Gestor de dependencias y gestor de tareas**
+   Antes de elegir un gestor he investigado distintas opciones para finalmente, decantarme por npm. 
+   Al elegir como lenguaje TypeScript, las herramientas que más aparecían para este lenguaje son npm y yarn. A continuación dejo las principales características que considero relevantes de cada una de ellas:
+   - **npm**: Node Package Manager. Es el estándar y se instala por defecto. Sirve como gestor de dependencias y como gestor de tareas.Cabe destacar la gran comunidad que tiene, así como el soporte del que me puedo beneficiar para buscar información y soluciones a posibles errores.
+   - **yarn**: Es más nueva y surge como mejora a npm. Por ello, presenta más velocidad, es muy estable y muy seguro. 
+  
+  Si hacemos un balance entre las dos, en cuanto a velocidad, yarn instala paquetes en paralelo, tardando menos que npm, ya que este no realiza la instalación de paquetes uno a uno. Esto es algo a tener muy en cuenta si estamos trabajando en un proyecto grande. Debido a las diferencias y mejoras que surgen con yarn, en la versión 5.0 de npm se ha trabajado mucho en nuevas actualizaciones, estabilidad, ofrecer una mejor velocidad y más seguridad respecto a las otras versiones de npm. 
+  **Haciendo este balance, he elegido npm ya que el proyecto que estoy desarrollando en la asignatura no es muy grande, por lo que este gestor es más que útil y suficiente.**
+
+
 
