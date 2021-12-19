@@ -1,15 +1,17 @@
 import User from "./User";
 import Activity from "./Activity"
+import { ActivityType } from "./ActivityType";
 
 //Class created manage all users and activities of the system
 export default class Handler {
     private _users: Map<string,User>
     private _activities: Map<string,Activity>
-
+    private _frequencies: Map<ActivityType,number>
     // Data should be load from database, JSON, etc
     constructor() {
         this._users = new Map<string,User>()
         this._activities = new Map<string,Activity>()
+        this._frequencies = new Map<ActivityType,number>()
     }
 
     add_user(ID: string, usuario: User) {
