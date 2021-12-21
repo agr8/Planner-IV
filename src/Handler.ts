@@ -64,4 +64,20 @@ export default class Handler {
             return false
         }
     } 
+
+    update_frequency(ActivityType: ActivityType, frequency: number) {
+        if(this._frequencies.has(ActivityType)) {
+            return false
+        } else {
+            this._frequencies.set(ActivityType,frequency)
+            return true
+        }
+    }
+    get_frequency(ActivityType: ActivityType) {
+        if (this._frequencies.has(ActivityType)){
+            return this._frequencies.get(ActivityType)
+        }else{
+            return null 
+        }
+    }
 }
