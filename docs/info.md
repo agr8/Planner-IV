@@ -98,7 +98,7 @@ En este apartado se pretende justificar la realización de cada objetivo, ademá
       Este tipo de clientes engloba a todos aquellos comerciantes que utilizarán la aplicación como un medio de publicidad. Pagarán para que su negocio pueda aparecer y ser recomendado a los usuarios.
     - **Instituciones, asociaciones o el Ayuntamiento de Granada.**
       Se trata de organismos interesados en los datos generados por la aplicación. De esta forma, pueden saber qué tipo de actividades son las que más éxito tienen en la ciudad, planificar otras actividades para el futuro en función de lo que los usuarios consuman, etc. 
-## Objetivo 2 - Comienzo de la implementación del proyecto :computer:
+## Objetivo 2 - Comienzo de la implementación del proyecto :computer: :heavy_check_mark:
 
 ---
   
@@ -109,7 +109,7 @@ He elegido el lenguaje TypeScript ya que conocía previamente  algunos de sus pu
   
   Estos puntos facilitan mucho el desarrollo ya que detecta los errores antes que otros lenguajes de programación (TypeScript es un superset de JavaScript, por lo que supone un gran cambio y una mejora enorme respecto a JavaScript) Por otro lado, no había realizado muchos proyectos ni prácticas con TypeScript, así que lo he considerado como una buena oportunidad para aprender más. Además, mi compañero @modejota ( que realizó el Objetivo 2 ) se encontraba en la misma situación que yo y a ambos nos pareció buena idea llevar a cabo la implementación en TypeScript.
 
-## Objetivo 3 - Automatización de operaciones :wrench: :package:
+## Objetivo 3 - Automatización de operaciones :wrench: :package: :heavy_check_mark:
 
 ---
 * **Gestor de dependencias y gestor de tareas**
@@ -123,3 +123,53 @@ He elegido el lenguaje TypeScript ya que conocía previamente  algunos de sus pu
 
 
 
+## Objetivo 4 - Tests :white_check_mark: :rotating_light: 
+
+---
+* **Lógica de negocio sobre la que se trabaja en este objetivo**
+* **Elección de *test runner* y *biblioteca de aserciones***
+  Para elegir la herramienta o las herramientas con las que voy a llevar a cabo los tests, primero he estudiado todos los conceptos relacionados con el desarrollo basado en test. Toda la información la he encontrado en los siguientes enlaces, que corresponden con los recursos de la asignatura y el material del curso cero: 
+  *  http://jj.github.io/IV/documentos/proyecto/4.Tests 
+  *  https://jj.github.io/curso-tdd/temas/tests-unitarios.html 
+  *  https://jj.github.io/curso-tdd/temas/tests-unitarios-organizaci%C3%B3n.html 
+
+  Teniendo todo esto claro, he buscado marcos de pruebas y bibliotecas de aserciones con los que pudiera trabajar con TypeScript, que es el lenguaje en el que se está desarrollando el proyecto. Algunos de los resultados de esta búsqueda: ***Jest, Mocha, Jasmine, AVA, Tape, Karma, Puppeteer,Chai***...
+
+  Para, poder tomar una decisión adecuada respecto a la/s herramienta/s he establecido algunos ***criterios de búsqueda y aceptación***. En primer lugar, busco que tenga soporte, esté bien documentado y no sea difícil de aprender a utilizar. Siguiendo esta línea, busco un marco de pruebas con sus propias aserciones, es decir, descarto un marco de pruebas que dependa de bibliotecas de aserciones externas y requiera mucha configuración inicial. 
+  Considerando todo lo anterior, voy a centrar la comparación en los dos marcos de prueba más populares: 
+  * [Jest](https://jestjs.io/es-ES/): En su [repo de GitHub](https://github.com/facebook/jest/pulse/daily) se puede comprobar que tiene un **gran mantenimiento**, las estadísticas de los últimos commits y PR (el último commit se realizó hace 4 horas) y que tiene 1276 *contributors* y 37.5k *stars*.
+  La **puesta en marcha** de Jest es **muy sencilla**, no requiere de configuraciones adicionales aunque permite realizarlas más adelante, una vez se vayan necesitando. 
+  Incluye su **propia biblioteca de aserciones** que se basan en el comportamiento.
+  Además, Jest permite conocer el porcentaje de **cobertura del código** de una forma  muy sencilla:
+    ```
+    jest --coverage
+    ```
+  * [Mocha](https://mochajs.org/): Como se ha mencionado anteriormente, es de los frameworks más populares pero si nos fijamos en su [repo de GitHub](https://github.com/mochajs/mocha) y comparamos sus **cifras** con Jest, las de Mocha son **bastante inferiores**: El último commit es del 29 de Octubre de 2021, 472 *contributors* y 21k *stars*. 
+  Mocha es **extendible** y **flexible**,además de ser muy **configurable**, esto es una gran ventaja para personalizar y tener todo el control del desarrollo de test del proyecto. 
+  Este marco de pruebas permite trabajar con **cualquier biblioteca de aserciones**, lo que supondrá incluir dependencias y sus respectivas configuraciones. Por ejemplo, Mocha se suele utilizar bastante con la biblioteca de aserciones de Chai. 
+  Respecto a la **cobertura de código**, se necesita una herramienta específica, [Wallaby.js](https://wallabyjs.com/), para poder conocer el porcentaje de código que se ha cubierto.
+
+
+  **Decisión final**:
+   Teniendo en cuenta todo lo anterior, **he decidido usar Jest** en este proyecto ya que tiene un gran soporte, es el más utilizado (esto siempre ayuda a encontrar más información y soluciones a posibles errores), es fácil de configurar, rápido y ofrece lo que necesito para este objetivo sin necesidad de establecer muchas dependencias de bibliotecas externas. Es cierto que para un proyecto mayor sería interesante utilizar Mocha por todas las posibilidades de configuración y personalización que brinda, pero dado el tamaño de este proyecto, considero que Jest es más que suficiente. Además, en cuanto al *coverage*, es mucho más sencillo utilizarlo con Jest que con Mocha, ya que este último necesita *Wallaby.js* para ofrecerlo.    
+
+  :paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips:
+
+  Por último, dejo algunos enlaces a sitios donde he encontrado esta información:  
+  
+   *  https://mochajs.org/
+   *  https://github.com/mochajs/mocha
+   *  https://jestjs.io/es-ES/
+   *  https://github.com/facebook/jest 
+   *  https://freddixx.medium.com/nodejs-testing-with-jest-vs-mocha-on-typescript-in-2021-7bffc28a4379
+   *  https://www.chaijs.com/guide/installation/ 
+   *  https://openbase.com/
+   *  https://www.testim.io/blog/best-unit-testing-framework-for-javascript/ 
+   *  https://geekflare.com/es/javascript-unit-testing/ 
+
+  :paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips:
+
+   
+* **Cómo se han hecho los tests. Principios FIRST.**
+* **Integración de los tests en la herramienta de gestión de tareas**
+  
