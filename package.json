@@ -3,7 +3,7 @@
     "homepage": "https://github.com/agr8/Planner-IV#readme",
     "bugs": {
         "url": "https://github.com/agr8/Planner-IV/issues",
-        "email": "angelagr@correo.ugr.es"  
+        "email": "angelagr@correo.ugr.es"
     },
     "license": "GPL-3.0",
     "author": "Ángela Gallardo Ruiz <angelagr@correo.ugr.es>",
@@ -11,10 +11,16 @@
         "type": "git",
         "url": "git+https://github.com/agr8/Planner-IV.git"
     },
-    "version": "0.0.1",
+    "version": "0.0.2",
     "scripts": {
         "check": "tsc --noEmit",
         "build": "tsc",
-        "test": "echo \"No existe ningun test, ERROR\""
+        "test": "jest"
+    },
+    "devDependencies": {
+        "@types/jest": "^27.4.0",
+        "jest": "^27.4.5",
+        "ts-jest": "^27.1.2",
+        "typescript": "^4.5.4"
     }
 }
