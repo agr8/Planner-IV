@@ -32,23 +32,23 @@ export default class User {
 
     }
 
-    public get name() {
+    public getName() {
         return this._name
     }
 
-    public get surname() {
+    public getSurname() {
         return this._surname
     }
 
-    public get age() {
+    public getAge() {
         return this._age
     }
     
-    public get email() {
+    public getEmail() {
         return this._email
     }
 
-    public get type() {
+    public getType() {
         return this._type
     }
 }
