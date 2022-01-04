@@ -11,7 +11,14 @@ export default class Handler {
     constructor() {
         this._users = new Map<string,User>()
         this._activities = new Map<string,Activity>()
-        this._frequencies = new Map<ActivityType,number>()
+        this._frequencies = new Map<ActivityType,number>([
+            [ActivityType.CULTURAL,0],
+            [ActivityType.OCIO,0],
+            [ActivityType.OTRO,0],
+            [ActivityType.RESTAURACION,0],
+            [ActivityType.TAPAS,0],
+            [ActivityType.TURISMO,0]         
+        ])
     }
 
     add_user(ID: string, usuario: User) {
@@ -67,10 +74,10 @@ export default class Handler {
 
     update_frequency(ActivityType: ActivityType, frequency: number) {
         if(this._frequencies.has(ActivityType)) {
-            return false
-        } else {
             this._frequencies.set(ActivityType,frequency)
             return true
+        } else {
+            return false
         }
     }
     get_frequency(ActivityType: ActivityType) {
