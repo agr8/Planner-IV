@@ -33,23 +33,23 @@ export default class Activity {
         this._type = type
     }
 
-    public get title() {
+    public getTitle() {
         return this._title
     }
 
-    public get description() {
+    public getDescription() {
         return this._description
     }
 
-    public get price() {
+    public getPrice() {
         return this._price
     }
 
-    public get place() {
+    public getPlace() {
         return this._place
     }
 
-    public get type() {
+    public getType() {
         return this._type
     }
     
