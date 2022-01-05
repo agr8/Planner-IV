@@ -1,6 +1,8 @@
 import User from "./User";
 import Activity from "./Activity"
 import { ActivityType } from "./ActivityType";
+import { FrequencyConstants as Const } from "./Globals"
+
 
 //Class created manage all users and activities of the system
 export default class Handler {
@@ -73,11 +75,16 @@ export default class Handler {
     } 
 
     update_frequency(ActivityType: ActivityType, frequency: number) {
-        if(this._frequencies.has(ActivityType)) {
-            this._frequencies.set(ActivityType,frequency)
-            return true
-        } else {
-            return false
+        if(frequency < Const.MIN_FREQUENCY){
+            throw new Error('Frequency is invalid')
+        }else{
+
+            if(this._frequencies.has(ActivityType)) {
+                this._frequencies.set(ActivityType,frequency)
+                return true
+            } else {
+                return false
+            }
         }
     }
     get_frequency(ActivityType: ActivityType) {
