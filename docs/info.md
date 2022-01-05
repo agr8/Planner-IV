@@ -127,6 +127,8 @@ He elegido el lenguaje TypeScript ya que conocía previamente  algunos de sus pu
 
 ---
 * **Lógica de negocio sobre la que se trabaja en este objetivo**
+El PMV sobre el que se trabaja en este Objetivo es el de [Gestión de Informes](https://github.com/agr8/Planner-IV/milestone/1).
+Se necesitaba una lógica de negocio mínima para este PMV que poder testear y como se acordó en clase, consiste en registrar las actividades frecuentadas basándome en [esta Historia de Usuario](https://github.com/agr8/Planner-IV/issues/5). Para esto, se creó [el Issue correspondiente](https://github.com/agr8/Planner-IV/issues/22).
 * **Elección de *test runner* y *biblioteca de aserciones***
   Para elegir la herramienta o las herramientas con las que voy a llevar a cabo los tests, primero he estudiado todos los conceptos relacionados con el desarrollo basado en test. Toda la información la he encontrado en los siguientes enlaces, que corresponden con los recursos de la asignatura y el material del curso cero: 
   *  http://jj.github.io/IV/documentos/proyecto/4.Tests 
@@ -169,7 +171,22 @@ He elegido el lenguaje TypeScript ya que conocía previamente  algunos de sus pu
 
   :paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips::paperclips:
 
-   
-* **Cómo se han hecho los tests. Principios FIRST.**
-* **Integración de los tests en la herramienta de gestión de tareas**
+* **Instalación de Jest**
+    ```
+    npm install --save-dev jest typescript ts-jest @types/jest
+    ```
+    **Crear archivo de configuración automáticamente**:
+     ```
+    npx ts-jest config:init 
+    ```
+* **Cómo se han hecho los tests.**
+  Para realizar los tests he procurado seguir en todo momento las mejores prácticas que he encontrado en la documentación de jest y en la documentación del material de clase:
+
+    * :paperclip: https://github.com/goldbergyoni/javascript-testing-best-practices/blob/master/readme-es.md 
+    * :paperclip: https://jestjs.io/es-ES/
+    * :paperclip: https://jj.github.io/curso-tdd/temas/tests-unitarios-organizaci%C3%B3n.html
+
+  Para una mejor comprensión de los tests los he esctructurado, siempre que ha sido posible, en tres secciones, Arrange, Act y Assert. Es decir, una primera parte donde se prepara lo necesario para el test, una segunda parte de la prueba concreta que se quiere hacer y una última parte, en la que se trabaja con el valor obtenido del test.
+
+
   
