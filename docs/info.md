@@ -186,6 +186,7 @@ La lógica de negocio se ha implementado en la clase *Handler*. Además, tambié
     * :paperclip: https://github.com/goldbergyoni/javascript-testing-best-practices/blob/master/readme-es.md 
     * :paperclip: https://jestjs.io/es-ES/
     * :paperclip: https://jj.github.io/curso-tdd/temas/tests-unitarios-organizaci%C3%B3n.html
+    * :papeclip: https://medium.com/@tasdikrahman/f-i-r-s-t-principles-of-testing-1a497acda8d6
 
   
   
@@ -195,7 +196,21 @@ La lógica de negocio se ha implementado en la clase *Handler*. Además, tambié
   Para una mejor comprensión de los tests y cumpliendo con este principio los he estructurado, siempre que ha sido posible, en tres secciones, *Arrange*, *Act* y *Assert*. Es decir, una primera parte donde se prepara lo necesario para el test, una segunda parte de la prueba concreta que se quiere hacer y una última parte, en la que se trabaja con el valor obtenido del test.
   * **Repeatable**: Los tests deben de poder repetirse en diferentes entornos obteniendo el mismo resultado en todos ellos.
   * **Self-validating**: No se debería tener que comprobar de forma manual la validación de los tests. Esto no es necesario ya que los tests desarrollados se autovalidan con Jest.
-  * **Thorough**: Los tests deben ser lo más completos posibles. En este caso se comprueban todos los posibles escenarios críticos. 
+  * **Thorough**: Los tests deben ser lo más completos posibles. En este caso se comprueban todos los posibles escenarios críticos: 
+    * Se ha comprobado que un usuario sea creado con un nombre, edad y apellidos válidos
+    * Se ha comprobado el buen funcionamiento de sus métodos get
+    * Se ha comprobado que una actividad sea creada con un título, descripción,precio y lugar       válidos.
+    * Se ha comprobado el buen funcionamiento de sus métodos get
+    * Se ha comprobado que sea posible añadir a un nuevo usuario al conjunto de usuarios.
+    * Se ha comprobado que No sea posible añadir, nuevamente, a un usuario que ya existe en el       conjunto de usuarios.
+    * Se ha comprobado que sea posible obtener un usuario existente en el conjunto conociendo       su ID y que no sea posible obtener un usuario que no exista en dicho conjunto.
+    * Se ha comprobado que pueda eliminarse únicamente un usuario que exista en el conjunto.
+    * Se ha comprobadoo que puede añadirse una actividad, una única vez, al conjunto de             actividades.
+    * Se ha comprobado que pueda obtenerse una actividad perteneciente al conjunto conociendo      el ID de ésta.
+    * Se ha comprobado que pueda eliminarse una actividad del conjunto de actividades.
+    * Se ha comprobado que, al principio, todos los tipos de actividades tengan frecuencia con       valor 0, ya que no se ha registrado ninguna.
+    * Se ha comprobado que pueda registrarse valores de frecuencia para cada tipo de actividad.
+    * Se ha comprobado que se puede obtener correctamente un valor de frecuencia de un tipo de actividad concreto cuando éste ha sido actualizado previamente.
 
 
     
