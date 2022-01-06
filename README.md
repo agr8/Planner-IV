@@ -50,9 +50,8 @@ De esta forma, se lanzarán los tests utilizando el *test runner* **jest** con e
 ```
 npm run test
 ```
-
-Se ha testeado la lógica que añade valor al PMV que se está abordando en [este Milestone](https://github.com/agr8/Planner-IV/milestone/1). Esta lógica consiste en tener un registro de las actividades frecuentadas para la [Gestión de Informes](https://github.com/agr8/Planner-IV/milestone/1) y se encuentra en la clase *Handler*. Además, se han testeado las clase *Activity* y *User* ya que se hace uso de ellas en la clase *Handler*. 
-Si quiere lanzar los tests por separado, puede hacerlo con los siguientes comandos:
+ 
+Si quiere lanzar los tests disponibles por separado, puede hacerlo con los siguientes comandos:
 ```
 npm run test -t Handler
 ```
@@ -64,7 +63,7 @@ npm run test -t Activity
 ```
 
 
-Encontrará más información sobre la justificación de las herramientas elegidas y cómo se han creado los tests en la sección *Objetivo 4 -Tests* de la [documentación adicional](docs/info.md) :paperclips:
+Encontrará más información sobre la justificación de las herramientas elegidas, cómo se han creado los tests y su justificación en la sección *Objetivo 4 -Tests* de la [documentación adicional](docs/info.md) :paperclips:
 
 
 ---
