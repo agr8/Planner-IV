@@ -129,6 +129,7 @@ He elegido el lenguaje TypeScript ya que conocía previamente  algunos de sus pu
 * **Lógica de negocio sobre la que se trabaja en este objetivo**
 El PMV sobre el que se trabaja en este Objetivo es el de [Gestión de Informes](https://github.com/agr8/Planner-IV/milestone/1).
 Se necesitaba una lógica de negocio mínima para este PMV que poder testear y como se acordó en clase, consiste en registrar las actividades frecuentadas basándome en [esta Historia de Usuario](https://github.com/agr8/Planner-IV/issues/5). Para esto, se creó [el Issue correspondiente](https://github.com/agr8/Planner-IV/issues/22).
+La lógica de negocio se ha implementado en la clase *Handler*. Además, también se han testeado las clases *Activity* y *User* ya que se hace uso de ellas en la clase *Handler*. 
 * **Elección de *test runner* y *biblioteca de aserciones***
   Para elegir la herramienta o las herramientas con las que voy a llevar a cabo los tests, primero he estudiado todos los conceptos relacionados con el desarrollo basado en test. Toda la información la he encontrado en los siguientes enlaces, que corresponden con los recursos de la asignatura y el material del curso cero: 
   *  http://jj.github.io/IV/documentos/proyecto/4.Tests 
