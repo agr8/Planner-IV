@@ -186,7 +186,15 @@ Se necesitaba una lógica de negocio mínima para este PMV que poder testear y c
     * :paperclip: https://jestjs.io/es-ES/
     * :paperclip: https://jj.github.io/curso-tdd/temas/tests-unitarios-organizaci%C3%B3n.html
 
-  Para una mejor comprensión de los tests los he esctructurado, siempre que ha sido posible, en tres secciones, Arrange, Act y Assert. Es decir, una primera parte donde se prepara lo necesario para el test, una segunda parte de la prueba concreta que se quiere hacer y una última parte, en la que se trabaja con el valor obtenido del test.
-
-
   
+  
+  Se han seguido los **principios F.I.R.S.T**, que corresponden con:
+  * **Fast**: Los tests deben ser rápidos, deben de poder ejecutarse y dar un resultado o fallar en pocos segundos. 
+  * **Isolated/Independent**: Los tests deben ser aislados, sin dependencias entre ellos ni con el entorno, pudiendo ejecutar cada test de forma independiente.
+  Para una mejor comprensión de los tests y cumpliendo con este principio los he estructurado, siempre que ha sido posible, en tres secciones, *Arrange*, *Act* y *Assert*. Es decir, una primera parte donde se prepara lo necesario para el test, una segunda parte de la prueba concreta que se quiere hacer y una última parte, en la que se trabaja con el valor obtenido del test.
+  * **Repeatable**: Los tests deben de poder repetirse en diferentes entornos obteniendo el mismo resultado en todos ellos.
+  * **Self-validating**: No se debería tener que comprobar de forma manual la validación de los tests. Esto no es necesario ya que los tests desarrollados se autovalidan con Jest.
+  * **Thorough**: Los tests deben ser lo más completos posibles. En este caso se comprueban todos los posibles escenarios críticos. 
+
+
+    
