@@ -1,15 +1,26 @@
 import User from "./User";
 import Activity from "./Activity"
+import { ActivityType } from "./ActivityType";
+import { FrequencyConstants as Const } from "./Globals"
+
 
 //Class created manage all users and activities of the system
 export default class Handler {
     private _users: Map<string,User>
     private _activities: Map<string,Activity>
-
+    private _frequencies: Map<ActivityType,number>
     // Data should be load from database, JSON, etc
     constructor() {
         this._users = new Map<string,User>()
         this._activities = new Map<string,Activity>()
+        this._frequencies = new Map<ActivityType,number>([
+            [ActivityType.CULTURAL,0],
+            [ActivityType.OCIO,0],
+            [ActivityType.OTRO,0],
+            [ActivityType.RESTAURACION,0],
+            [ActivityType.TAPAS,0],
+            [ActivityType.TURISMO,0]         
+        ])
     }
 
     add_user(ID: string, usuario: User) {
@@ -62,4 +73,25 @@ export default class Handler {
             return false
         }
     } 
+
+    update_frequency(ActivityType: ActivityType, frequency: number) {
+        if(frequency < Const.MIN_FREQUENCY){
+            throw new Error('Frequency is invalid')
+        }else{
+
+            if(this._frequencies.has(ActivityType)) {
+                this._frequencies.set(ActivityType,frequency)
+                return true
+            } else {
+                return false
+            }
+        }
+    }
+    get_frequency(ActivityType: ActivityType) {
+        if (this._frequencies.has(ActivityType)){
+            return this._frequencies.get(ActivityType)
+        }else{
+            return null 
+        }
+    }
 }

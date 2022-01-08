@@ -26,3 +26,7 @@ export abstract class ActivityConstants {
 
     static readonly MIN_PRICE: number = 0
 }
+export abstract class FrequencyConstants {
+    static readonly MIN_FREQUENCY: number = 0
+}
+

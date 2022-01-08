@@ -29,16 +29,41 @@ Para la compilación,está disponible el siguiente comando:
 ```
 npm run build
 ```
-Cuando los tests estén implementados (aún no lo están, por lo que la orden emitirá un mensaje de salida avisando de ello) podrá ejecutarlos con la orden:
+Para ejecutar los tests implementados hasta el momento:
 ```
 npm run test
 ```
 
 En cuanto a la justificación de las decisiones que se han tomado sobre el lenguaje y el gestor de dependencias y de tareas elegidos, puede encontrar más información en la [documentación adicional](docs/info.md) :paperclips:
 
+## Tests :white_check_mark: :rotating_light: 
+
+Para lanzar los tests que se han implementado, se ha integrado esta tarea en el gestor de tareas que se está utilizando en el proyecto, npm. Para ello, simplemente he establecido lo siguiente en el fichero ***package.json***:
+```
+  "scripts": {
+        "check": "tsc --noEmit",
+        "build": "tsc",
+        "test": "jest"
+    },
+```
+De esta forma, se lanzarán los tests utilizando el *test runner* **jest** con el comando:
+```
+npm run test
+```
+ 
+Si quiere lanzar los tests disponibles por separado, puede hacerlo con los siguientes comandos:
+```
+npm run test -t Handler
+```
+```
+npm run test -t User
+```
+```
+npm run test -t Activity
+```
 
 
-
+Encontrará más información sobre la justificación de las herramientas elegidas, cómo se han creado los tests y su justificación en la sección *Objetivo 4 -Tests* de la [documentación adicional](docs/info.md) :paperclips:
 
 
 ---
