@@ -15,7 +15,9 @@
     "scripts": {
         "check": "tsc --noEmit",
         "build": "tsc",
-        "test": "jest"
+        "test": "jest",
+        "docker:build": "docker build -t agr8/planner-iv .",
+        "docker:run": "docker run -t -v `pwd`:/app/test agr8/planner-iv"
     },
     "devDependencies": {
         "@types/jest": "^27.4.0",
