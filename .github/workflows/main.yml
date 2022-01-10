@@ -19,7 +19,7 @@ jobs:
         uses: docker/login-action@v1 
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_ACCESS_TOKEN }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
           
       - 
         name: Build and push
@@ -27,5 +27,5 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: agr8/Planner-IV:latest
+          tags: agr8/planner-ivlatest
         
