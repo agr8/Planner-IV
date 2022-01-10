@@ -24,4 +24,4 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: agr8/Planner-IV:latest
+          tags: agr8/planner-iv:latest
