@@ -123,7 +123,7 @@ He elegido el lenguaje TypeScript ya que conocía previamente  algunos de sus pu
 
 
 
-## Objetivo 4 - Tests :white_check_mark: :rotating_light: 
+## Objetivo 4 - Tests :white_check_mark: :rotating_light: :heavy_check_mark:
 
 ---
 * **Lógica de negocio sobre la que se trabaja en este objetivo**
@@ -196,5 +196,58 @@ Se necesitaba una lógica de negocio mínima para este PMV que poder testear y c
   * **Self-validating**: No se debería tener que comprobar de forma manual la validación de los tests. Esto no es necesario ya que los tests desarrollados se autovalidan con Jest.
   * **Thorough**: Los tests deben ser lo más completos posibles. En este caso se comprueban todos los posibles escenarios críticos. 
 
+## Objetivo 5 - Creación de un contenedor para pruebas :whale2:		
 
-    
+---
+* **Imagen elegida para el contenedor**
+  Para la base del contenedor **busco** una imagen lo más minimalista posible, es decir, una imagen básica, con las mínimas dependencias posibles (evitando posibles riesgos de seguridad) y que ocupe poco espacio. 
+  Teniendo en cuenta la información del [material de la asignatura](http://jj.github.io/IV/documentos/temas/Contenedores), es más conveniente usar imágenes oficiales de un lenguaje (en este caso, *node*), en lugar de utilizar la imagen de un sistema operativo y después instalar el lenguaje junto con todas las dependencias que se necesiten. Por ello, he buscado [imágenes oficiales de node](https://hub.docker.com/_/node/) y elegiré la imagen base entre estos resultados. Las imágenes que aparecen se pueden dividir en tres grupos: 
+    * ```node:<version>``` 
+    * ```node:<version>-alpine```
+    * ```node:<version>-slim```
+  
+  Las del primer grupo las descarto ya que son imágenes *por defecto* que no cumplen con los criterios establecidos. Por tanto, centraré mi elección en los dos últimos grupos.
+
+  Desde [nodejs.org](https://nodejs.org/es/about/releases/) recomiendan que las aplicaciones de producción solo deben usar versiones *Active LTS* o *Maintenance LTS*, entre las que se encuentran las versiones *14* y *16*. Para hacer una segunda criba, he elegido la **versión 16** de node ya que es la versión LTS en estado *Activo* más reciente y con más soporte en plazo de tiempo mayor. El estado *LTS Activo* se inició el *26/10/2021* y finalizará el 30/04/2024. Más concretamente, usaré la versión 16.13.
+  Así pues, con la versión *16.13* (y que pertenezcan a ```node:<version>-alpine``` o a ```node:<version>-slim```) encontramos las siguientes imágenes:
+    * 16.13.1-alpine3.14,
+    * 16.13-alpine, 16.13-alpine3.15, 16.13.1-alpine, 16.13.1-alpine3.15
+    * 16.13-bullseye-slim, 16.13.1-bullseye-slim,16.13-buster, 16.13.1, 16.13.1-buster
+    * 16.13-buster-slim, 16.13-slim, 16.13.1-buster-slim, 16.13.1-slim
+    * 16.13-stretch-slim, 16.13.1-stretch-slim
+  
+
+  Por un lado, encontramos imágenes basadas en la distro ***alpine***, que como hemos visto en el [material de la asignatura](http://jj.github.io/IV/documentos/temas/Contenedores), tiene un tamaño muy pequeño ya que se trata de una imagen muy básica.
+  Por otro lado, encontramos imágenes de las ***distintas versiones de Debian*** en su versión *-slim**. Entre ellas, me quedo con ***bullseye*** al tratarse de la futura versión LTS más reciente y con soporte a más largo plazo. Fuente de la información: [aquí](https://wiki.debian.org/LTS).
+  Tras esta tercera criba, me queda elegir entre imágenes basadas en *alpine* o de *bullseye*. Para elegir entre ellas, he comparado sus tamaños utilizando los siguientes comandos:
+
+  ```
+  docker pull --quiet node:16.13.1-alpine3.14
+  ```
+  ```
+  docker pull --quiet node:16.13.1-alpine3.15
+  ```
+  ```
+  docker pull --quiet node:16.13.1-bullseye-slim
+  ```
+  ```
+  docker images --digests
+  ```
+  Obteniendo:
+  node:16.13.1-alpine3.14: 110MB
+  node:16.13.1-alpine:3.15: 110 MB
+  node:16.13.1-bullseye-slim: 185 MB
+
+  Además, he encontrado una página que hace un análisis de cada imagen. Encontrando:
+  *  [node:16.13.1-alpine3.14](https://snyk.io/test/docker/node%3A16.13.1-alpine3.14):  0 vulnerabilidades de seguridad y 16 dependencias. 
+  *  [node:16.13.1-alpine:3.15](https://snyk.io/test/docker/node%3A16.13.1-alpine3.15):  0 vulnerabilidades de seguridad y 16 dependencias. 
+  *  [node:16.13.1-bullseye-slim](https://snyk.io/test/docker/node%3A16.13.1-bullseye-slim): 37 vulnerabilidades de seguridad y 97 dependencias.
+
+  Por tanto, teniendo en cuenta el tamaño, el número de dependencias y de vulnerabilidades, utilizaré una imagen de node basada en alpine. En el archivo *Dockerfile* lo indicaré con la siguiente línea:
+  ```
+  FROM node:16.13.1-alpine
+  ```
+
+
+
+      
