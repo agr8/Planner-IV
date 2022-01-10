@@ -11,7 +11,7 @@
         "type": "git",
         "url": "git+https://github.com/agr8/Planner-IV.git"
     },
-    "version": "0.0.2",
+    "version": "0.0.3",
     "scripts": {
         "check": "tsc --noEmit",
         "build": "tsc",
