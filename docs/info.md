@@ -216,8 +216,8 @@ La lógica de negocio se ha implementado en la clase *Handler*. Además, tambié
 
 ---
 * **Imagen elegida para el contenedor**
-  Para la base del contenedor **busco** una imagen lo más minimalista posible, es decir, una imagen básica, con las mínimas dependencias posibles (evitando posibles riesgos de seguridad) y que ocupe poco espacio. 
-  Teniendo en cuenta la información del [material de la asignatura](http://jj.github.io/IV/documentos/temas/Contenedores), es más conveniente usar imágenes oficiales de un lenguaje (en este caso, *node*), en lugar de utilizar la imagen de un sistema operativo y después instalar el lenguaje junto con todas las dependencias que se necesiten. Por ello, he buscado [imágenes oficiales de node](https://hub.docker.com/_/node/) y elegiré la imagen base entre estos resultados. Las imágenes que aparecen se pueden dividir en tres grupos: 
+
+  Para la base del contenedor **busco** una imagen lo más minimalista posible, es decir, una imagen básica, con las mínimas dependencias posibles (evitando posibles riesgos de seguridad) y que ocupe poco espacio. Además, busco que sea una imagen oficial basada en el lenguaje que se ha elegido para el proyecto (en este caso, *node*). Este último criterio se debe a la información del [material de la asignatura](http://jj.github.io/IV/documentos/temas/Contenedores), en la que se explica que es más conveniente usar imágenes oficiales de un lenguaje, en lugar de utilizar la imagen de un sistema operativo y después instalar el lenguaje junto con todas las dependencias que se necesiten. Por ello, he buscado [imágenes oficiales de node](https://hub.docker.com/_/node/) y elegiré la imagen base entre estos resultados. Las imágenes que aparecen se pueden dividir en tres grupos: 
     * ```node:<version>``` 
     * ```node:<version>-alpine```
     * ```node:<version>-slim```
