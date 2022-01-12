@@ -1,6 +1,7 @@
 name: Construcción automática del contenedor
 on:
   push:
+    branches: [ Objetivo-6, main ]
     paths:
       - package.json
       - package-lock.json
@@ -24,4 +25,5 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          repository: agr8/planner-iv:latest         
+          repository: agr8/planner-iv  
+          tags: latest
