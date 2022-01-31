@@ -65,6 +65,17 @@ npm run test -t Activity
 
 Encontrará más información sobre la justificación de las herramientas elegidas, cómo se han creado los tests y su justificación en la sección *Objetivo 4 -Tests* de la [documentación adicional](docs/info.md) :paperclips:
 
+## Docker :whale::package:
+Para construir el contenedor de pruebas, tiene disponible el comando:
+```
+npm run docker:build
+```
+Para lanzarlo y que se ejecuten los tests:
+```
+npm run docker:run
+```
+Encontrará más información sobre la justificación de la imagen elegida en la sección *Objetivo 5 - Creación de un contenedor para pruebas* de la [documentación adicional](docs/info.md) :paperclips:
 
 ---
+
 * La información adicional relativa al desarrollo de cada objetivo se encuentra en el siguiente enlace:   [Documentación](docs/info.md) :paperclips:
