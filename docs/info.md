@@ -217,24 +217,24 @@ La lógica de negocio se ha implementado en la clase *Handler*. Además, tambié
 ---
 * **Imagen elegida para el contenedor**
 
-  Para la base del contenedor **busco** una imagen lo más minimalista posible, es decir, una imagen básica, con las mínimas dependencias posibles (evitando posibles riesgos de seguridad) y que ocupe poco espacio. Además, busco que sea una imagen oficial basada en el lenguaje que se ha elegido para el proyecto (en este caso, *node*). Este último criterio se debe a la información del [material de la asignatura](http://jj.github.io/IV/documentos/temas/Contenedores), en la que se explica que es más conveniente usar imágenes oficiales de un lenguaje, en lugar de utilizar la imagen de un sistema operativo y después instalar el lenguaje junto con todas las dependencias que se necesiten. Por ello, he buscado [imágenes oficiales de node](https://hub.docker.com/_/node/) y elegiré la imagen base entre estos resultados. Las imágenes que aparecen se pueden dividir en tres grupos: 
-    * ```node:<version>``` 
-    * ```node:<version>-alpine```
-    * ```node:<version>-slim```
+Para la base del contenedor **busco** una imagen lo más minimalista posible, es decir, una imagen básica, con las mínimas dependencias posibles y que ocupe poco espacio.  Además, es importante tener en cuenta la seguridad. Con esto me refiero a que no se trate de una imagen con vulnerabilidades (o al menos, con vulnerabilidades conocidas). Por otro lado, busco que sea una imagen moderna y oficial basada en el lenguaje que se ha elegido para el proyecto (en este caso, *node*). Este último criterio se debe a la información del [material de la asignatura](http://jj.github.io/IV/documentos/temas/Contenedores), en la que se explica que es más conveniente usar imágenes oficiales de un lenguaje, en lugar de utilizar la imagen de un sistema operativo y después instalar el lenguaje junto con todas las dependencias que se necesiten. Por ello, he buscado [imágenes oficiales de node](https://hub.docker.com/_/node/) y elegiré la imagen base entre estos resultados. Las imágenes que aparecen se pueden dividir en tres grupos: 
+  * ```node:<version>``` 
+  * ```node:<version>-alpine```
+  * ```node:<version>-slim```
   
-  Las del primer grupo las descarto ya que son imágenes *por defecto* que no cumplen con los criterios establecidos. Por tanto, centraré mi elección en los dos últimos grupos.
+  Las del primer grupo las descarto ya que son imágenes *por defecto* que no cumplen con el primer criterio previamente descrito; no corresponden con imágenes *lo más minimalistas posibles*. Por tanto, centraré mi elección en los dos últimos grupos.
 
   Desde [nodejs.org](https://nodejs.org/es/about/releases/) recomiendan que las aplicaciones de producción solo deben usar versiones *Active LTS* o *Maintenance LTS*, entre las que se encuentran las versiones *14* y *16*. Para hacer una segunda criba, he elegido la **versión 16** de node ya que es la versión LTS en estado *Activo* más reciente y con más soporte en plazo de tiempo mayor. El estado *LTS Activo* se inició el *26/10/2021* y finalizará el 30/04/2024. Más concretamente, usaré la versión 16.13.
   Así pues, con la versión *16.13* (y que pertenezcan a ```node:<version>-alpine``` o a ```node:<version>-slim```) encontramos las siguientes imágenes:
-    * 16.13.1-alpine3.14,
-    * 16.13-alpine, 16.13-alpine3.15, 16.13.1-alpine, 16.13.1-alpine3.15
-    * 16.13-bullseye-slim, 16.13.1-bullseye-slim,16.13-buster, 16.13.1, 16.13.1-buster
-    * 16.13-buster-slim, 16.13-slim, 16.13.1-buster-slim, 16.13.1-slim
-    * 16.13-stretch-slim, 16.13.1-stretch-slim
+  * 16.13.1-alpine3.14,
+  * 16.13-alpine, 16.13-alpine3.15, 16.13.1-alpine, 16.13.1-alpine3.15
+  * 16.13-bullseye-slim, 16.13.1-bullseye-slim,16.13-buster, 16.13.1, 16.13.1-buster
+  * 16.13-buster-slim, 16.13-slim, 16.13.1-buster-slim, 16.13.1-slim
+  * 16.13-stretch-slim, 16.13.1-stretch-slim
   
 
   Por un lado, encontramos imágenes basadas en la distro ***alpine***, que como hemos visto en el [material de la asignatura](http://jj.github.io/IV/documentos/temas/Contenedores), tiene un tamaño muy pequeño ya que se trata de una imagen muy básica.
-  Por otro lado, encontramos imágenes de las ***distintas versiones de Debian*** en su versión *-slim**. Entre ellas, me quedo con ***bullseye*** al tratarse de la futura versión LTS más reciente y con soporte a más largo plazo. Fuente de la información: [aquí](https://wiki.debian.org/LTS).
+  Por otro lado, encontramos imágenes de las ***distintas versiones de Debian*** en su versión **-slim**. Entre ellas, me quedo con ***bullseye*** al tratarse de la futura versión LTS más reciente y con soporte a más largo plazo. Fuente de la información: [aquí](https://wiki.debian.org/LTS).
   Tras esta tercera criba, me queda elegir entre imágenes basadas en *alpine* o de *bullseye*. Para elegir entre ellas, he comparado sus tamaños utilizando los siguientes comandos:
 
   ```
@@ -254,16 +254,82 @@ La lógica de negocio se ha implementado en la clase *Handler*. Además, tambié
   node:16.13.1-alpine:3.15: 110 MB
   node:16.13.1-bullseye-slim: 185 MB
 
-  Además, he encontrado una página que hace un análisis de cada imagen. Encontrando:
+  Para abordar el criterio de la seguridad, he encontrado una página que hace un análisis de cada imagen. Los resultados obtenidos han sido los siguientes:
   *  [node:16.13.1-alpine3.14](https://snyk.io/test/docker/node%3A16.13.1-alpine3.14):  0 vulnerabilidades de seguridad y 16 dependencias. 
   *  [node:16.13.1-alpine:3.15](https://snyk.io/test/docker/node%3A16.13.1-alpine3.15):  0 vulnerabilidades de seguridad y 16 dependencias. 
   *  [node:16.13.1-bullseye-slim](https://snyk.io/test/docker/node%3A16.13.1-bullseye-slim): 37 vulnerabilidades de seguridad y 97 dependencias.
 
-  Por tanto, teniendo en cuenta el tamaño, el número de dependencias y de vulnerabilidades, utilizaré una imagen de node basada en alpine. En el archivo *Dockerfile* lo indicaré con la siguiente línea:
+  **Conclusión final**
+  
+  >Por tanto, teniendo en cuenta la versión, el tamaño, el número de dependencias y de vulnerabilidades, utilizaré una imagen de node basada en alpine. En el archivo *Dockerfile* lo indicaré con la siguiente línea:
+  >```
+  > FROM node:16.13.1-alpine
+  >```
+  Quiero dejar reflejado aquí para futuras consultas del proyecto que, en la entrega del objetivo 5 se ha utilizado la imagen *node:16.13.1-alpine*, pero tras su revisión y aportación de @JJ, desde el objetivo 6 la imagen utilizada será *node-alpine*. En el archivo *Dockerfile* se indica como:
   ```
-  FROM node:16.13.1-alpine
+    FROM node:alpine
   ```
+  De esta forma, me aseguro que la imagen elegida será siempre la más actual. Es cierto que la imagen anterior, en su versión *16.13.1*, es la más actual en estos momentos pero en un futuro dejará de serlo y no estaré usando en el proyecto la imagen *más moderna*.
+## Objetivo 6 - Integración continua 
+--- 
+* **Elección de los sistemas de integración continua**
+    En el [Objetivo 6 de esta asignatura](http://jj.github.io/IV/documentos/proyecto/6.CI) se pide *añadir integración continua* al proyecto. Por un lado, hay que elegir un sistema de integración continua para comprobar que no hay problemas con el código que ya existe (y en general, con el propio repo en sí) cada vez que se quiera integrar nuevos cambios; automatizando la ejecución de los tests. Por otro lado, se elegirá otro sistema de integración continua que testeará las versiones del lenguaje previamente elegido en el proyecto. Es decir, comprobará las versiones de *node* que soportan el proyecto.
+    Para tomar una decisón sobre los sistemas de integración continua que utilizaré he establecido unos ***criterios previos***:
+    * Facilidad en la configuración. Necesito que no exista una gran curva de aprendizaje ya que no dispongo del tiempo necesario para aprender a empezar a utilizar y configurar un sistema muy complicado.
+    * Documentación extensa e información abundante sobre el sistema para encontrar fácilmente solución a posibles problemas o dudas que se puedan presentar.
+    * Compatibilidad con GitHub. (Este requisito lo cumplen muchos sistemas, pero es esencial en el escenario en el que se está desarrollando el proyecto)
+    * Que pueda usarse en la nube y no haya que hacer instalaciones locales.
+    * Que sea un servicio gratuito o tenga planes de prueba gratuitos durante un tiempo considerable (mínimo un mes teniendo en cuenta que el cuatrimestre acaba en este plazo de tiempo)
+    * Que permita probar varias versiones del lenguaje de este proyecto sin que suponga mucha dificultad. 
+    * Compatible con Docker para la segunda tarea.  
+  
+    
+    Teniendo en cuenta estos criterios voy a ***examinar y comparar*** algunos sistemas que, o bien se han comentado en la asignatura, o bien los he encontrado buscando distintas posibilidades:
 
+    * [**Travis**](https://www.travis-ci.com/): Es un sistema compatible con GitHub recomendado para comenzar con la integración continua ya que no tiene ningún tipo de dificultad. Para [empezar](https://docs.travis-ci.com/user/tutorial/) a utilizarlo existen muchos tutoriales y documentación. Solo hay que registrarse (en mi caso lo he hecho con la cuenta de GitHub), activar el repo o los repos que quieran utilizarse con Travis y elegir un plan. En este caso, Travis dispone de un plan gratuito de 30 días en el que te ofrecen 10000 créditos. Para tener acceso al plan se necesita introducir la tarjeta de crédito ya que realizan la transacción de 1$, que después te devuelven. Una vez elegido el plan, hay que añadir un fichero *.travis.yml* al repo y esta será la configuración necesaria. Se ejecutará solo al integrar los cambios oportunos en el proyecto. Los resultados de la ejecución de los tests pueden verse en la [web](https://travis-ci.com/auth) y en GitHub, ya que Travis le informa de los resultados con *Checks API*.
+    Por otro lado, cabe destacar que es compatible con Docker y tiene una característica muy útil, *build matrix*. Esta permite testear diferentes versiones del lenguaje de forma fácil y cómoda.
+  
+    * [**JFrog Pipelines**](https://jfrog.com/pipelines/): Tiene servicio tanto en la nube, como en local. De forma gratuita y sin límite de días, tenemos acceso al servicio en la nube, que es el que nos interesa en este contexto. No requiere la tarjeta de crédito y ofrece  2000 CI/CD Minutos/mes,repos ilimitados y acceso ilimitado a dockerhub, entre otros. Para utilizar el servicio autohospedado existe una prueba gratuita de 30 días. La configuración de este sistema se basa en un archivo(por convención, *pipelines.yml*) que hay que almacenar en el repo. Este utiliza su propio lenguaje basado en YAML, que se denomina Pipelines DSL. Además, hay que configurar Pipelines para que use el repo. Todo el proceso está bastante bien explicado en su [documentación](https://www.jfrog.com/confluence/display/JFROG/Defining+a+Pipeline).
+    Tiene integración con Docker y con GitHub pero para ello hay que crear y configurar los denominados *registros de integración*. [Cómo hacerlo aquí](https://www.jfrog.com/confluence/display/JFROG/Managing+Pipelines+Integrations) 
+   
+
+    * [**Circle CI**](https://circleci.com/):  Está basado en la nube y es muy sencillo de utilizar. He encontrado bastante documentación y [tutoriales](https://circleci.com/docs/2.0/first-steps/) sobre cómo empezar. Únicamente, hay que registrarse con GitHub, gestionar los permisos de los repos que se quieran utilizar y su configuración se basa en el fichero *.circle/config.yml*. Este se almacena en el repo y se encarga de automatizar la ejecución cada vez que se haga push al repo. También permite ejecutar los tests en paralelo. Ofrece una plantilla para crear el fichero de configuración con muchas opciones. Además, es compatible con Docker y es necesario [habilitar checks](https://circleci.com/docs/2.0/enable-checks/) para utilizarlo con GitHub. 
+    En cuanto a conceptos, es similar a GitHub Actions pero difieren un poco en la sintaxis. Este sistema también ofrece un plan gratuito con 1000 minutos/mes.
+
+
+    * [**Semaphore CI**](https://semaphoreci.com/): Este sistema se ha investigado, está basado en la nube y ofrece paralelismo, uso ilimitado y es muy personalizable. Su configuración se basa en un fichero *.semaphore/semaphore.yml* y funciona de forma muy parecida a *Circle CI*. El problema es su plan de prueba gratuito, que aunque no hay que introducir la tarjeta, únicamente es válido durante 14 días. Esto aparece al darse de alta para probar el sistema, por lo que ha sido descartado al suponer mucho menos tiempo del mes establecido en los criterios previos de búsqueda.
+    
+    * [**Jenkins**](https://www.jenkins.io/): Es un sistema muy completo y personalizable. Es gratuito pero requiere instalación. Su configuración, entre otras muchas cosas, reside también en un fichero. Se trata de un fichero propio, *Jenkinsfile*. Al requerir instalación, no cumple con los requisitos previos que se han establecido. Además, tiene una curva de aprendizaje considerable.      
+
+    * [**GitHub Actions**](https://github.com/features/actions): Este sistema de *workflows* viene ya instalado con GitHub, no hay nada que configurar ya que se puede hacer directamente desde GitHub. Para su funcionamiento, únicamente hay que crear el archivo *.yml* en el directorio *.github/workflows/* desde una plantilla o de forma independiente. Además, tiene soporte con Docker como ya hemos visto en el objetivo 5.
+
+
+    **Conclusión**:
+    *Jenkins* no cumple con los criterios previos establecidos por lo que queda decartado.
+    *Semaphore CI* era una opción muy interersante pero ha quedado descartada también por su prueba gratuita de 14 días.
+    **GitHub Actions** es un sistema muy útil y que ya conozco del objetivo anterior. Además, se puede reutilizar el trabajo realizado en ese objetivo con Docker para llevar a cabo una de las tareas del objetivo 6.
+    *JFrog Pipelines* es un sistema nuevo para mí y, aunque dispone de  documentación y tutoriales, y no parece muy difícil, no me resulta tan inmediato como los otros sistemas. Por tanto, queda descartado.
+
+    *Circle CI* es un sistema que me ha resultado sencillo y cómodo, y cumple con los requisitos previos. Era el otro sistema que iba a utilizar después de probarlo para la otra tarea del objetivo ya que no hay que introducir la tarjeta para utilizarlo pero lo he tenido que acabar descartando por el requisito de la lista de comprobación:
+    > * [ ] ¿Se ha evitado Circle CI, porque a estas alturas ya lo ha usado todo el mundo?
+    
+    Por tanto, el otro sistema de integración continua que voy a utilizar es **Travis**. Es muy sencillo y ya he trabajado previamente con el en el curso que impartió *@JJ*. Como se ha descrito anteriormente, cumple con todos los criterios que se han establecido y dispone de *build matrix*, que me va a permitir testear varias versiones del lenguaje en el proyecto. Cuando acabe la asignatura y el mes de prueba de Travis, pretendo continuar por mi cuenta con los demás objetivos que no me ha dado tiempo a trabajar, por lo que cambiaré el sistema de integración y utilizaré *Circle CI*.
+    **Decisión final**:
+    **Teniendo en cuenta todo lo anterior, utilizaré Travis y GitHub Actions**.
+
+
+    
+* **Versiones que se han testeado**
+    Para comprobar las versiones con las que funciona el proyecto, he probado las pares, ya que como se vio en objetivos anteriores, son las estables, que tienen estado *LTS*. Las impares dejan de ser compatibles. Toda esta información aparece más detallada [aquí](https://nodejs.org/es/about/releases/).
+    La versión 12 se encuentra en mantenimiento hasta el 30/04/2022.
+    La versión 14,se encuentra en mantenimiento hasta el 30/04/2023.
+    La versión 16, se encuentra en estado LTS Activo, comenzará su mantenimiento en octubre de este año hasta el 30/04/2024.
+    La versión 18 aún no está disponible, se encuentra en estado *Pendiente* y se lanzará en abril de este año. Por tanto, no se ha incluido.
+    Haciendo una pequeña búsqueda, he encontrado que jest ha dado algunos fallos con la versión 12 de nodejs. La versión 14 es la que aparece en la documentación de jest, por lo que no debería de causar ningún error. He comprobado que estas dos versiones sean válidas para el proyecto con el sistema de integración continua de *Travis*. La versión más actual y estable de node la he comprobado en el contenedor Docker con *GitHub Actions*.
+   
+
+
+   
 
 
       

@@ -76,6 +76,9 @@ npm run docker:run
 ```
 Encontrará más información sobre la justificación de la imagen elegida en la sección *Objetivo 5 - Creación de un contenedor para pruebas* de la [documentación adicional](docs/info.md) :paperclips:
 
+## Integración continua
+Puede encontrar más información sobre los sistemas de integración continua elegidos y las versiones que se han comprobado en la sección *Objetivo 6 - Integración continua* de la [documentación adicional](docs/info.md) :paperclips:
+
 ---
 
 * La información adicional relativa al desarrollo de cada objetivo se encuentra en el siguiente enlace:   [Documentación](docs/info.md) :paperclips:

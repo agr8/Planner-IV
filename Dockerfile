@@ -1,6 +1,6 @@
-FROM node:16.13.1-alpine
+FROM node:alpine
 
-LABEL version="1.0.0" maintainer="angelagr@correo.ugr.es"
+LABEL version="2.0.0" maintainer="angelagr@correo.ugr.es"
 
 WORKDIR /app/
 

@@ -4,4 +4,4 @@ automatizar:
     fichero: package.json
     orden: npm run
 test: tests/Handler.test.ts
-
+CI: .travis.yml
